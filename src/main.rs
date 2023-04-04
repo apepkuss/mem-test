@@ -1,25 +1,38 @@
 use wasmedge_sdk::{
     config::{CommonConfigOptions, ConfigBuilder, HostRegistrationConfigOptions},
     error::HostFuncError,
-    params, CallingFrame, ImportObjectBuilder, Module, Vm, WasmValue,
+    host_function, params, Caller, ImportObjectBuilder, Module, VmBuilder, WasmValue,
 };
 
-fn hello(_: &CallingFrame, _: Vec<WasmValue>) -> Result<Vec<WasmValue>, HostFuncError> {
+#[host_function]
+fn hello(_: Caller, _: Vec<WasmValue>) -> Result<Vec<WasmValue>, HostFuncError> {
     println!("Hello, world!");
 
     Ok(vec![])
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+    // load wasm module from file
+    let module = Module::from_file(
+        None,
+        "/Users/sam/workspace/rust/mem-test/hello/target/wasm32-wasi/release/hello.wasm",
+    )?;
+
+    // create import object
+    let import = ImportObjectBuilder::new()
+        .with_func::<(), ()>("hello", hello)?
+        .build("env")?;
+
+    // create vm
     let config = ConfigBuilder::new(CommonConfigOptions::default())
         .with_host_registration_config(HostRegistrationConfigOptions::new().wasi(true))
         .build()?;
+    let mut vm = VmBuilder::new().with_config(config).build()?;
 
-    // create a Vm context
-    let mut vm = Vm::new(Some(config))?;
-
-    // get default wasi module
-    let mut wasi_module = vm.wasi_module()?;
+    // init default wasi module
+    let wasi_module = vm
+        .wasi_module_mut()
+        .ok_or("Failed to get the default wasi module")?;
     let vec_envs: Vec<String> = std::env::vars()
         .into_iter()
         .map(|(k, v)| format!("{}={}", k, v))
@@ -28,16 +41,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let preopens = vec![".:."];
     wasi_module.initialize(None, Some(envs), Some(preopens));
 
-    let import = ImportObjectBuilder::new()
-        .with_func::<(), ()>("hello", hello)?
-        .build("env")?;
-    let vm = vm.register_import_module(import)?;
-
-    let module = Module::from_file(
-        None,
-        "/Users/sam/workspace/rust/mem-test/hello/target/wasm32-wasi/release/hello.wasm",
-    )?;
-    let vm = vm.register_module(None, module)?;
+    // register import object and wasm module
+    let vm = vm
+        .register_import_module(import)?
+        .register_module(None, module)?;
 
     let mut round = 1;
     loop {
