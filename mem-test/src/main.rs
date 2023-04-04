@@ -13,10 +13,7 @@ fn hello(_: Caller, _: Vec<WasmValue>) -> Result<Vec<WasmValue>, HostFuncError> 
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // load wasm module from file
-    let module = Module::from_file(
-        None,
-        "/Users/sam/workspace/rust/mem-test/hello/target/wasm32-wasi/release/hello.wasm",
-    )?;
+    let module = Module::from_file(None, "target/wasm32-wasi/release/hello.wasm")?;
 
     // create import object
     let import = ImportObjectBuilder::new()
