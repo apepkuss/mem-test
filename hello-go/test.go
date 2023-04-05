@@ -2,7 +2,7 @@ package main
 
 import (
 	"os"
-	// "time"
+	"time"
 
 	"github.com/second-state/WasmEdge-go/wasmedge"
 )
@@ -36,8 +36,13 @@ func main() {
 	vm.Validate()
 	vm.Instantiate()
 
-	for {
+	start := time.Now()
+	timeElapsed := time.Since(start).Seconds()
+	for timeElapsed < 60 {
 		// time.Sleep(100 * time.Millisecond)
 		vm.Execute("hello")
+		timeElapsed = time.Since(start).Seconds()
 	}
+	
+	time.Sleep(300 * time.Second)
 }

@@ -50,5 +50,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         elapsed = now.elapsed().as_secs();
     }
 
+    // sleep 5 min
+    std::thread::sleep(std::time::Duration::from_secs(300));
+
     Ok(())
 }
