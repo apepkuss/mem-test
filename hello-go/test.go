@@ -38,7 +38,7 @@ func main() {
 
 	start := time.Now()
 	timeElapsed := time.Since(start).Seconds()
-	for timeElapsed < 60 {
+	for timeElapsed < 3600 + 1800 {
 		// time.Sleep(100 * time.Millisecond)
 		vm.Execute("hello")
 		timeElapsed = time.Since(start).Seconds()
