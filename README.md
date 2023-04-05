@@ -56,5 +56,13 @@ The metrics used in the test are as follows:
     <firgure class="third">
         <img src="images/0.12.0-alpha.2-38-gdad018af/mem-ubuntu2004-x86.png">
         <img src="images/0.12.0-alpha.2-38-gdad018af/mem-ubuntu2004-docker-m1.png">
-        <img src="images/0.12.0-alpha.2-38-gdad018af/mem-macos-m1.png", title="macos">
+        <img src="images/0.12.0-alpha.2-38-gdad018af/mem-macos-m1.png">
+    </firgure>
+
+- Resident Set Size (RSS)
+
+    <firgure class="third">
+        <img src="images/0.12.0-alpha.2-38-gdad018af/rss-ubuntu2004-x86.png">
+        <img src="images/0.12.0-alpha.2-38-gdad018af/rss-ubuntu2004-docker-m1.png">
+        <img src="images/0.12.0-alpha.2-38-gdad018af/rss-macos-m1.png">
     </firgure>
