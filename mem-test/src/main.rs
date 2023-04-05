@@ -43,11 +43,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .register_import_module(import)?
         .register_module(None, module)?;
 
-    let mut round = 1;
-    loop {
-        println!("Round_{}", round);
+    let now = std::time::Instant::now();
+    let mut elapsed = now.elapsed().as_secs();
+    while elapsed < 3600 + 1800 {
         vm.run_func(None, "hello", params![])?;
-        round += 1;
+        elapsed = now.elapsed().as_secs();
     }
 
     Ok(())
