@@ -31,7 +31,7 @@ The metrics used in the test are as follows:
   
 ## Results
 
-**Observations**: (todo)
+**Observations**: As the diagrams below shows, both MCP and RSS of the Rust SDK on `macOS + Apple M1` go down in the final phase, while the others seem not to do the cleanup job. However, all diagrams of the Golang SDK do not present the decline of MCP and RSS in the final phase, even if on `macOS + Apple M1`. The reason might be that the `ps` command cannot get the correct information of the memory consumption while the garbage collector of Golang starts working.
 
 - Memory Consumption Percentage (MCP)
 
