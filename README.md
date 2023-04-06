@@ -31,9 +31,14 @@ The metrics used in the test are as follows:
   
 ## Results
 
+**Observations**: (todo)
+
 - Memory Consumption Percentage (MCP)
 
-  - Test with Rust SDK
+  - Diagrams of the tests with Rust SDK
+
+    Only the diagram of the test on `macOS 13.2.1 + Apple M1` shows the memory going down in the final phase (the sleeping phase in test code), while the others seem not to do the cleanup job.
+
     Ubuntu-22.04 on WSL2 + x86 | Ubuntu-20.04 on Docker + Apple M1
     :-------------------------:|:-------------------------:
     ![](images/0.12.0-alpha.2-38-gdad018af/mem-ubuntu2204-wsl2-x86-rs.png)  |  ![](images/0.12.0-alpha.2-38-gdad018af/mem-ubuntu2004-docker-m1-rs.png)
@@ -42,7 +47,8 @@ The metrics used in the test are as follows:
     :------------------------------:|:-------------------------:
     ![](images/0.12.0-alpha.2-38-gdad018af/mem-fedora37-docker-m1-rs.png)  |  ![](images/0.12.0-alpha.2-38-gdad018af/mem-macos-m1-rs.png)
 
-  - Test with Go SDK
+  - Diagrams of the tests with Golang SDK
+
     Ubuntu-22.04 on WSL2 + x86 | Ubuntu-20.04 on Docker + Apple M1
     :-------------------------:|:-------------------------:
     ![](images/0.12.0-alpha.2-38-gdad018af/mem-ubuntu2204-wsl2-x86-go.png)  |  ![](images/0.12.0-alpha.2-38-gdad018af/mem-ubuntu2004-docker-m1-go.png)
@@ -53,7 +59,8 @@ The metrics used in the test are as follows:
 
 - Resident Set Size (RSS)
 
-  - Test with Rust SDK
+  - Diagrams of the tests with Rust SDK
+  
     Ubuntu-22.04 on WSL2 + x86 | Ubuntu-20.04 on Docker + Apple M1
     :-------------------------:|:-------------------------:
     ![](images/0.12.0-alpha.2-38-gdad018af/rss-ubuntu2204-wsl2-x86-rs.png)  |  ![](images/0.12.0-alpha.2-38-gdad018af/rss-ubuntu2004-docker-m1-rs.png)
@@ -62,7 +69,8 @@ The metrics used in the test are as follows:
     :------------------------------:|:-------------------------:
     ![](images/0.12.0-alpha.2-38-gdad018af/rss-fedora37-docker-m1-rs.png)  |  ![](images/0.12.0-alpha.2-38-gdad018af/rss-macos-m1-rs.png)
     
-  - Test with Go SDK
+  - Diagrams of the tests with Go SDK
+
     Ubuntu-22.04 on WSL2 + x86 | Ubuntu-20.04 on Docker + Apple M1
     :-------------------------:|:-------------------------:
     ![](images/0.12.0-alpha.2-38-gdad018af/rss-ubuntu2204-wsl2-x86-go.png)  |  ![](images/0.12.0-alpha.2-38-gdad018af/rss-ubuntu2004-docker-m1-go.png)
