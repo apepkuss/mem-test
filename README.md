@@ -1,11 +1,11 @@
 
-# Memory Consumption Test of WasmEdge Runtime with Rust + Golang SDK
+# Memory Consumption Test of WasmEdge Runtime
 
-Inspired by [Potential Memory Leak Issue](https://github.com/WasmEdge/WasmEdge/issues/1805), this repository is used to measure the memory consumption of WasmEdge runtime.
+Inspired by [Issue 1805: Potential Memory Leak Issue](https://github.com/WasmEdge/WasmEdge/issues/1805), this repository is to measure the memory consumption of WasmEdge runtime with Rust and Golang SDK.
 
 ## Test Setup
 
-The data and diagrams shown below are generated in the following test environments:
+The test is performed in the following software (and hardware) environments:
 
 - OS and Architecture
   - Ubuntu 22.04 (WSL2, x86_64)
