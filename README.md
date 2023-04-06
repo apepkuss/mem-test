@@ -31,9 +31,15 @@ The metrics used in the test are as follows:
   
 ## Results
 
-**Observations**: As the diagrams below shows, both MCP and RSS of the Rust SDK on `macOS + Apple M1` go down in the final phase, while the others seem not to do the cleanup job. However, all diagrams of the Golang SDK do not present the decline of MCP and RSS in the final phase, even if on `macOS + Apple M1`. The reason might be that the `ps` command cannot get the correct information of the memory consumption while the garbage collector of Golang starts working.
+**Observations**:
 
-- Memory Consumption Percentage (MCP)
+- As the diagrams below shows, both MCP and RSS of the Rust SDK on `macOS + Apple M1` go down in the final phase, while the others do not present the same trend.
+
+- All diagrams of the Go SDK do not present the decline of MCP and RSS in the final phase, even if on `macOS + Apple M1`. The reason might be that the `ps` command cannot get the correct information of the memory consumption while the garbage collector of Golang starts working.
+
+- The tests with both Rust and Go SDK all climb up to the peak sharply at the begining, and then keep the plateau to the end. There is no obvious trend of the memory consumption keeping rising during the process of calling the `hello` host function periodically.
+
+### Diagrams of Memory Consumption Percentage (MCP)
 
   - Diagrams of the tests with Rust SDK
 
@@ -57,7 +63,7 @@ The metrics used in the test are as follows:
     :------------------------------:|:-------------------------:
     ![](images/0.12.0-alpha.2-38-gdad018af/mem-fedora37-docker-m1-go.png)  |  ![](images/0.12.0-alpha.2-38-gdad018af/mem-macos-m1-go.png)
 
-- Resident Set Size (RSS)
+### Diagrams of Resident Set Size (RSS)
 
   - Diagrams of the tests with Rust SDK
   
