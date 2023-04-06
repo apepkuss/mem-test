@@ -33,32 +33,39 @@ The metrics used in the test are as follows:
 - Memory Consumption Percentage (MCP)
 
   - Test with Rust SDK
-    <firgure class="half">
-        <img src="images/0.12.0-alpha.2-38-gdad018af/mem-ubuntu2204-wsl2-x86-rs.png"/><img src="images/0.12.0-alpha.2-38-gdad018af/mem-ubuntu2004-docker-m1-rs.png"/><img src="images/0.12.0-alpha.2-38-gdad018af/mem-fedora37-docker-m1-rs.png"/><img src="images/0.12.0-alpha.2-38-gdad018af/mem-macos-m1-rs.png"/>
-    </firgure>
+    Ubuntu-22.04 on WSL2 + x86 | Ubuntu-20.04 on Docker + Apple M1
+    :-------------------------:|:-------------------------:
+    ![](images/0.12.0-alpha.2-38-gdad018af/mem-ubuntu2204-wsl2-x86-rs.png)  |  ![](images/0.12.0-alpha.2-38-gdad018af/mem-ubuntu2004-docker-m1-rs.png)
     
+    Fedora 37 on Docker + Apple M1  |  macOS 13.2.1 + Apple M1
+    :------------------------------:|:-------------------------:
+    ![](images/0.12.0-alpha.2-38-gdad018af/mem-fedora37-docker-m1-rs.png)  |  ![](images/0.12.0-alpha.2-38-gdad018af/mem-macos-m1-rs.png)
+
   - Test with Go SDK
-    <firgure class="half">
-        <img src="images/0.12.0-alpha.2-38-gdad018af/mem-ubuntu2204-wsl2-x86-go.png">
-        <img src="images/0.12.0-alpha.2-38-gdad018af/mem-ubuntu2004-docker-m1-go.png">
-        <img src="images/0.12.0-alpha.2-38-gdad018af/mem-fedora37-docker-m1-go.png">
-        <img src="images/0.12.0-alpha.2-38-gdad018af/mem-macos-m1-go.png">
-    </firgure>
+    Ubuntu-22.04 on WSL2 + x86 | Ubuntu-20.04 on Docker + Apple M1
+    :-------------------------:|:-------------------------:
+    ![](images/0.12.0-alpha.2-38-gdad018af/mem-ubuntu2204-wsl2-x86-go.png)  |  ![](images/0.12.0-alpha.2-38-gdad018af/mem-ubuntu2004-docker-m1-go.png)
+    
+    Fedora 37 on Docker + Apple M1  |  macOS 13.2.1 + Apple M1
+    :------------------------------:|:-------------------------:
+    ![](images/0.12.0-alpha.2-38-gdad018af/mem-fedora37-docker-m1-go.png)  |  ![](images/0.12.0-alpha.2-38-gdad018af/mem-macos-m1-go.png)
 
 - Resident Set Size (RSS)
 
   - Test with Rust SDK
-    <firgure class="half">
-        <img src="images/0.12.0-alpha.2-38-gdad018af/rss-ubuntu2204-wsl2-x86-rs.png">
-        <img src="images/0.12.0-alpha.2-38-gdad018af/rss-ubuntu2004-docker-m1-rs.png">
-        <img src="images/0.12.0-alpha.2-38-gdad018af/rss-fedora37-docker-m1-rs.png">
-        <img src="images/0.12.0-alpha.2-38-gdad018af/rss-macos-m1-rs.png">
-    </firgure>
+    Ubuntu-22.04 on WSL2 + x86 | Ubuntu-20.04 on Docker + Apple M1
+    :-------------------------:|:-------------------------:
+    ![](images/0.12.0-alpha.2-38-gdad018af/rss-ubuntu2204-wsl2-x86-rs.png)  |  ![](images/0.12.0-alpha.2-38-gdad018af/rss-ubuntu2004-docker-m1-rs.png)
+    
+    Fedora 37 on Docker + Apple M1  |  macOS 13.2.1 + Apple M1
+    :------------------------------:|:-------------------------:
+    ![](images/0.12.0-alpha.2-38-gdad018af/rss-fedora37-docker-m1-rs.png)  |  ![](images/0.12.0-alpha.2-38-gdad018af/rss-macos-m1-rs.png)
     
   - Test with Go SDK
-    <firgure class="half">
-        <img src="images/0.12.0-alpha.2-38-gdad018af/rss-ubuntu2204-wsl2-x86-go.png">
-        <img src="images/0.12.0-alpha.2-38-gdad018af/rss-ubuntu2004-docker-m1-go.png">
-        <img src="images/0.12.0-alpha.2-38-gdad018af/rss-fedora37-docker-m1-go.png">
-        <img src="images/0.12.0-alpha.2-38-gdad018af/rss-macos-m1-go.png">
-    </firgure>
+    Ubuntu-22.04 on WSL2 + x86 | Ubuntu-20.04 on Docker + Apple M1
+    :-------------------------:|:-------------------------:
+    ![](images/0.12.0-alpha.2-38-gdad018af/rss-ubuntu2204-wsl2-x86-go.png)  |  ![](images/0.12.0-alpha.2-38-gdad018af/rss-ubuntu2004-docker-m1-go.png)
+    
+    Fedora 37 on Docker + Apple M1  |  macOS 13.2.1 + Apple M1
+    :------------------------------:|:-------------------------:
+    ![](images/0.12.0-alpha.2-38-gdad018af/rss-fedora37-docker-m1-go.png)  |  ![](images/0.12.0-alpha.2-38-gdad018af/rss-macos-m1-go.png)
