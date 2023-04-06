@@ -32,17 +32,16 @@ func main() {
 	module.AddFunction("hello", f)
 	vm.RegisterModule(module)
 
-	vm.LoadWasmFile("/Volumes/Dev/secondstate/me/mem-test/target/wasm32-wasi/release/hello.wasm")
+	vm.LoadWasmFile("/root/workspace/me/mem-test/target/wasm32-wasi/release/hello.wasm")
 	vm.Validate()
 	vm.Instantiate()
 
 	start := time.Now()
 	timeElapsed := time.Since(start).Seconds()
-	for timeElapsed < 3600 + 1800 {
-		// time.Sleep(100 * time.Millisecond)
+	for timeElapsed < 3600+1800 {
 		vm.Execute("hello")
 		timeElapsed = time.Since(start).Seconds()
 	}
-	
+
 	time.Sleep(300 * time.Second)
 }

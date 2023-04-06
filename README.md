@@ -20,6 +20,7 @@ The test is performed in the following software (and hardware) environments:
 - WasmEdge Go SDK v0.12.0-alpha.2
 
 - Test Code
+  - What it does: Run a host functon continuously for 3600 + 1800 seconds, then sleep 300 seconds, and then end the test.
   - Rust version: ./mem-test/src/main.rs
   - Golang version: ./hello-go/test.go
 
