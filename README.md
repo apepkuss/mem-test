@@ -1,5 +1,5 @@
 
-# Memory Consumption of WasmEdge Runtime
+# Memory Consumption Test of WasmEdge Runtime
 
 Inspired by [Potential Memory Leak Issue](https://github.com/WasmEdge/WasmEdge/issues/1805), this repository is used to measure the memory consumption of WasmEdge runtime.
 
